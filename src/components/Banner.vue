@@ -2,11 +2,11 @@
     <div>
         <v-row>
             <v-col>
-                <h1>Aqui va un texto</h1>
+                <section >{{ texto }}</section>
             </v-col>
             
             <v-col>
-                <h1>Aqui va otro texto</h1>
+                <section>{{ imagen }}</section>
             </v-col>
         </v-row>
     </div>
@@ -14,7 +14,10 @@
 <script>
     export default {
         name: 'Banner',
-        
+        props:{
+            texto: String,
+            imagen: String
+        }
     }
 </script>
 <style>

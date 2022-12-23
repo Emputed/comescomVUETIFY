@@ -2,7 +2,10 @@
   <v-app>
     <v-main>
       <hello-world />
-      <Banner></Banner>
+      <Banner texto="COMESCOM es un sistema que busca ayudar a las personas con poca experiencia en la cocina
+                    y que necesita realizar algún platillo con lo que tiene a su alcance. COMESCOM te recomendará
+                    recetas acorde a lo que tengas en tu cocina, tienes la posibilidad de elegir si te recomienda
+                    platillos con muchas o pocas calorías." imagen="Aqui va la imagen"></Banner>
 
     </v-main>
     <Footer></Footer>
