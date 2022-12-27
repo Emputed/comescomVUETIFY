@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <Navbar></Navbar>
-        <v-content>
+        <div>
             <v-container>
                 <v-checkbox v-for="verdura in verduras" :key="verdura.id" 
                  :label="verdura.name" 
@@ -9,7 +9,7 @@
                 </v-checkbox>
             </v-container>
 
-        </v-content>
+        </div>
         <Footer></Footer>
     </v-app>
 </template>

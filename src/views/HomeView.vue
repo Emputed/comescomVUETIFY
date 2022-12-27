@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <Navbar></Navbar>
     <v-main>
       <hello-world />
       <Banner texto="COMESCOM es un sistema que busca ayudar a las personas con poca experiencia en la cocina
