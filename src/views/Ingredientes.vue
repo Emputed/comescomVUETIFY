@@ -3,7 +3,9 @@
         <Navbar></Navbar>
         <v-content>
             <v-container>
-                <v-checkbox v-for="verdura in verduras" :key="verdura.id" :label="verdura.name" color="success">
+                <v-checkbox v-for="verdura in verduras" :key="verdura.id" 
+                 :label="verdura.name" 
+                 color="success">
                 </v-checkbox>
             </v-container>
 
@@ -184,7 +186,7 @@ export default {
             { id: '146', name: 'MANTEQUILLA', calorias: '752' },
             { id: '147', name: 'MAYONESA', calorias: '718' },
             { id: '148', name: 'MAYONESA LIGHT', calorias: '374' },
-            
+
         ]
     })
 }
