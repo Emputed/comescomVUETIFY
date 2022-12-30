@@ -1,15 +1,65 @@
 <template>
     <v-app>
         <Navbar></Navbar>
-        <div>
-            <v-container>
-                <v-checkbox v-for="verdura in verduras" :key="verdura.id" 
+        <v-main>
+            <v-container><h2>Verduras</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="verdura in verduras" 
+                 :key="verdura.id" 
                  :label="verdura.name" 
-                 color="success">
+                 color="success"
+                 >
+                </v-checkbox>
+            </v-container>
+            
+            <v-container><h2>Frutas</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="fruta in frutas"
+                 :key="fruta.id"
+                 :label="fruta.name"
+                 color="orange"
+                ></v-checkbox>
+            </v-container>
+
+            <v-container><h2>Carnes</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="carne in carnes"
+                 :key="carne.id"
+                 :label="carne.name"
+                 color="red darken-3"
+                ></v-checkbox>
+            </v-container>
+
+            <v-container><h2>Lacteos</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="lacteo in lacteos"
+                 :key="lacteo.id"
+                 :label="lacteo.name"
+                 color="secondary"
+                >
                 </v-checkbox>
             </v-container>
 
-        </div>
+            <v-container><h2>Harinas</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="harina in harinas"
+                 :key="harina.id"
+                 :label="harina.name"
+                 color="indigo"
+                >
+                </v-checkbox>
+            </v-container>
+
+            <v-container><h2>Grasas</h2></v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="grasa in grasas"
+                 :key="grasa.id"
+                 :label="grasa.name"
+                 color="error"
+                >
+                </v-checkbox>
+            </v-container>
+        </v-main>
         <Footer></Footer>
     </v-app>
 </template>
@@ -122,7 +172,7 @@ export default {
             { id: '88', name: 'TERNERA', calorias: '181' },
             { id: '89', name: 'TOCINO', calorias: '665' },
         ],
-        leche: [
+        lacteos: [
             { id: '90', name: 'HELADOS LÁCTEOS', calorias: '167' },
             { id: '91', name: 'LECHE CONDENSADA', calorias: '200' },
             { id: '92', name: 'LECHE DE ALMENDRAS', calorias: '335' },
@@ -157,7 +207,7 @@ export default {
             { id: '121', name: 'YOGUR NATURAL', calorias: '62' },
             { id: '122', name: 'YOGUR NATURAL CON FRUTA', calorias: '100' },
         ],
-        harinas:[
+        harinas: [
             { id: '123', name: 'ARROZ BLANCO', calorias: '354' },
             { id: '124', name: 'ARROZ INTEGRAL', calorias: '350' },
             { id: '125', name: 'AVENA', calorias: '367' },
@@ -179,7 +229,7 @@ export default {
             { id: '141', name: 'PASTA DE HOJALDRE COCIDA', calorias: '565' },
             { id: '142', name: 'PASTA DE SÉMOLA', calorias: '361' },
         ],
-        grasas:[
+        grasas: [
             { id: '143', name: 'ACEITE DE GIRASOL', calorias: '900' },
             { id: '144', name: 'ACEITE DE OLIVA', calorias: '900' },
             { id: '145', name: 'MANTECA', calorias: '670' },
