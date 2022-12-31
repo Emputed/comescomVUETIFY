@@ -130,6 +130,7 @@ export default {
                 "correo": this.correo,
                 "contra": this.contra
             }
+            console.log(json);
         },
         registro() {
             let json = {
