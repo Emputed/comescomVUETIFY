@@ -30,6 +30,11 @@ const routes = [
     name: 'proponerReceta',
     component: () => import('../views/ProponerReceta.vue')
   },
+  {
+    path: '/recetas',
+    name: 'recetas',
+    component: () => import('../views/Recetas.vue')
+  },
 ]
 
 const router = new VueRouter({
