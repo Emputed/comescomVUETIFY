@@ -5,11 +5,11 @@
             <v-container>
                 <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" 
                  :key="i">
-                    <v-img height="250" :src=recipe.image></v-img>
-                    <v-card-title>{{ recipe.label }}</v-card-title>
-                    <v-card-text>{{ recipe.ingredientLines }}</v-card-text>
+                    <v-img height="250" :src=recipe.recipe.image></v-img>
+                    <v-card-title>{{ recipe.recipe.label }}</v-card-title>
+                    <v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>
                     <v-divider class="mx-4"></v-divider>
-                    <v-card-text>Calorias: {{ recipe.calories }}</v-card-text>
+                    <v-card-text>Calorias: {{ recipe.recipe.calories }}</v-card-text>
                 </v-card>
             </v-container>
         </v-main>
