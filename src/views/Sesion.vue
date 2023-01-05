@@ -26,13 +26,13 @@
                                                                 color="blue"> </v-checkbox>
                                                         </v-col>
                                                     </v-row>
-                                                    <v-btn color="blue" dark block tile>Iniciar</v-btn>
+                                                    <v-btn color="light-green darken-4" dark block tile>Iniciar</v-btn>
                                                 </v-form>
                                             </v-col>
                                         </v-row>
                                     </v-card-text>
                                 </v-col>
-                                <v-col cols="12" md="6" class="blue rounded-bl-xl">
+                                <v-col cols="12" md="6" class="light-green darken-3 rounded-bl-xl">
                                     <div style="  text-align: center; padding: 180px 0;">
                                         <v-card-text class="white--text">
                                             <h3 class="text-center ">No tienes cuenta con nosotros?</h3>
@@ -48,7 +48,7 @@
                         </v-window-item>
                         <v-window-item :value="2">
                             <v-row>
-                                <v-col cols="12" md="6" class="blue rounded-br-xl">
+                                <v-col cols="12" md="6" class="light-green darken-3 rounded-br-xl">
                                     <div style="  text-align: center; padding: 180px 0;">
                                         <v-card-text class="white--text">
                                             <h3 class="text-center ">Ya tienes cuenta?</h3>
@@ -88,7 +88,7 @@
                                                                 v-model="sexo"></v-select>
                                                         </v-col>
                                                     </v-row>
-                                                    <v-btn color="blue" dark block tile>Registrar</v-btn>
+                                                    <v-btn color="light-green darken-4" dark block tile>Registrar</v-btn>
                                                 </v-form>
                                             </v-col>
                                         </v-row>

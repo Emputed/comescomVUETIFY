@@ -48,6 +48,8 @@ export default {
                 vue.recipes = response.data.hits;
                 console.log(vue.recipes);
             })
+    },
+    methods:{
     }
 }
 </script>
