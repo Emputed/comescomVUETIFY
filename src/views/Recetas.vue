@@ -2,16 +2,22 @@
     <v-app>
         <Navbar></Navbar>
         <v-main>
-            <v-container>
-                <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" 
-                 :key="i">
+            <v-row>
+                <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" :key="i">
                     <v-img height="250" :src=recipe.recipe.image></v-img>
                     <v-card-title>{{ recipe.recipe.label }}</v-card-title>
-                    <v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>
+                    <!--<v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>-->
+                    <v-card-text>
+                        <ul id="example-1">
+                            <li v-for="item in  recipe.recipe.ingredientLines">
+                                {{ item }}
+                            </li>
+                        </ul>
+                    </v-card-text>
                     <v-divider class="mx-4"></v-divider>
-                    <v-card-text>Calorias: {{ recipe.recipe.calories }}</v-card-text>
+                    <v-card-text>Calorias: {{ parseInt(recipe.recipe.calories) }}</v-card-text>
                 </v-card>
-            </v-container>
+            </v-row>
         </v-main>
         <Footer></Footer>
     </v-app>
@@ -30,7 +36,7 @@ export default {
 
     data() {
         return {
-            recipes: []
+            recipes: [],
         }
     },
 
@@ -46,10 +52,10 @@ export default {
             .then(function (response) {
                 //console.log(response)
                 vue.recipes = response.data.hits;
-                console.log(vue.recipes);
+                //console.log(vue.recipes);
             })
     },
-    methods:{
+    methods: {
     }
 }
 </script>

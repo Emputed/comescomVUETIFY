@@ -12,10 +12,6 @@
         <v-btn outlined to="/sesion">
             Ingreso
         </v-btn>
-
-        <v-btn outlined to="/registro">
-            Registro
-        </v-btn>
     </v-app-bar>
 </template>
 
