@@ -17,23 +17,23 @@ export default {
             slides: [
                 {
                     txt: 'COMESCOM cuenta con variedad de recetas para ti',
-                    src: '../assets/img/1.jpg',
+                    src: '../img/1.jpg',
                 },
                 {
                     txt: 'Solo necesitas decirnos con lo que cuentas a tu alcance',
-                    src: '../assets/img/2.jpg',
+                    src: '../img/2.jpg',
                 },
                 {
                     txt: 'Nosotros te mostraremos lo que puedes preparar con dichos ingredientes',
-                    src: '../assets/img/3.jpg', 
+                    src: '../img/3.jpg', 
                 },
                 {
                     txt: 'Tomando en cuenta el gasto calorico de tu preferencia',
-                    src: '../assets/img/4.jpg',
+                    src: '../img/4.jpg',
                 },
                 {
                     txt: 'Puedes decirnos si tienes alguna propuesta de receta que podamos agregar a la página, para que más personas puedan prepararla',
-                    src: '../assets/img/5.jpg',
+                    src: '../img/5.jpg',
                 }
             ]
         }

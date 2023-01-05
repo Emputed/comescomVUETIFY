@@ -15,7 +15,7 @@
 
                                         <v-row align="center" justify="center">
                                             <v-col cols="12" sm="8">
-                                                <v-form v-on:submit.prevent>
+                                                <v-form>
                                                     <v-text-field label="Correo electrónico" outlined dense color="blue"
                                                         autocomplete="false" class="mt-16" v-model="correo" />
                                                     <v-text-field label="Contraseña" outlined dense color="blue"
@@ -26,7 +26,7 @@
                                                                 color="blue"> </v-checkbox>
                                                         </v-col>
                                                     </v-row>
-                                                    <v-btn color="light-green darken-4" dark block tile>Iniciar</v-btn>
+                                                    <v-btn v-on:click="sesion(correo , contra )" color="light-green darken-4" dark block tile>Iniciar</v-btn>
                                                 </v-form>
                                             </v-col>
                                         </v-row>
@@ -69,14 +69,13 @@
                                             COMESCOM</h6>
                                         <v-row align="center" justify="center">
                                             <v-col cols="12" sm="8">
-                                                <v-form v-on:submit.prevent="registro">
+                                                <v-form>
                                                     <v-text-field label="Nombre Apellido" outlined dense color="blue"
                                                         autocomplete="false" v-model="nombre" />
                                                     <v-text-field label="Correo electrónico" outlined dense color="blue"
                                                         autocomplete="false" type="email" v-model="correo" />
                                                     <v-text-field label="Contraseña" outlined dense color="blue"
                                                         autocomplete="false" type="password" v-model="contra" />
-
                                                     <v-row>
                                                         <v-col cols="12" sm="6">
                                                             <v-text-field label="Edad" outlined dense color="blue"
@@ -100,7 +99,9 @@
                 </v-card>
             </v-col>
         </v-row>
+
     </v-container>
+    
 </template>
   
 
@@ -125,22 +126,23 @@ export default {
         source: String
     },
     methods: {
-        sesion() {
+        sesion: (correo, contra) => {
             let json = {
-                "correo": this.correo,
-                "contra": this.contra
+                "correo": correo,
+                "contra": contra
             }
-            console.log(json);
-        },
-        registro() {
+            //console.log(json);
+        }
+        ,
+        registro(nombre, correo, contra, edad, sexo) {
             let json = {
-                "nombre": this.nombre,
-                "correo": this.correo,
-                "contra": this.contra,
-                "edad": this.edad,
-                "sexo": this.sexo
+                "nombre": nombre,
+                "correo": correo,
+                "contra": contra,
+                "edad": edad,
+                "sexo": sexo
             }
-            axios.post('http://localhost:4000/api/users', json).then(data => {
+            axios.post('./api/users', json).then(data => {
                 console.log(data);
             })
         }
