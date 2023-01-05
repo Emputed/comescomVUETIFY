@@ -50,7 +50,6 @@ export default {
         let vue = this;
         axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=pizza`)
             .then(function (response) {
-                //console.log(response)
                 vue.recipes = response.data.hits;
                 //console.log(vue.recipes);
             })
