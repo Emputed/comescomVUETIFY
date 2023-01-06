@@ -2,6 +2,10 @@
     <v-app>
         <Navbar></Navbar>
         <v-main>
+        <v-container>
+            <v-text-field label="Buscar" v-model="search"></v-text-field>
+            <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
+        </v-container>
             <v-row>
                 <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" :key="i">
                     <v-img height="250" :src=recipe.recipe.image></v-img>
@@ -36,6 +40,7 @@ export default {
 
     data() {
         return {
+            search:"",
             recipes: [],
         }
     },
@@ -44,17 +49,29 @@ export default {
         Navbar,
         Footer,
     },
-    mounted() {
+    /*mounted() {
         let APP_ID = "02837b92";
         let APP_KEY = "241d207d693113e0c9d4b4a784165383";
         let vue = this;
-        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=pizza`)
+        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=salad`)
+            .then(function (response) {
+                vue.recipes = response.data.hits;
+                console.log(vue.recipes);
+            })
+    },*/
+    methods: {
+        busqueda: (search) => {
+            console.log(search);
+            let APP_ID = "02837b92";
+        let APP_KEY = "241d207d693113e0c9d4b4a784165383";
+        let vue = this;
+        console.log(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`);
+        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
             .then(function (response) {
                 vue.recipes = response.data.hits;
                 //console.log(vue.recipes);
             })
-    },
-    methods: {
+        }
     }
 }
 </script>
