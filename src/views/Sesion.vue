@@ -87,7 +87,7 @@
                                                                 v-model="sexo"></v-select>
                                                         </v-col>
                                                     </v-row>
-                                                    <v-btn color="light-green darken-4" dark block tile>Registrar</v-btn>
+                                                    <v-btn v-on:click="registro(nombre, correo, contra, edad, sexo )" color="light-green darken-4" dark block tile>Registrar</v-btn>
                                                 </v-form>
                                             </v-col>
                                         </v-row>

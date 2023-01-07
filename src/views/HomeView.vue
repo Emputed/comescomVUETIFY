@@ -2,6 +2,7 @@
   <v-app>
     <Navbar/>
     <v-main>
+      <ToolBar/>
       <Banner></Banner>
     </v-main>
     <Footer></Footer>
@@ -12,6 +13,7 @@
 <script>
 import Navbar from '@/components/Navbar';
 import Banner from '@/components/Banner';
+import ToolBar from '@/components/ToolBar';
 import Footer from '@/components/Footer'
 
 export default {
@@ -20,6 +22,7 @@ export default {
   components: {
     Navbar,
     Banner,
+    ToolBar,
     Footer
   },
 }
