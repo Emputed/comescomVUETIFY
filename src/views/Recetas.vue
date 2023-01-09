@@ -2,16 +2,11 @@
     <v-app>
         <Navbar></Navbar>
         <v-main>
-<<<<<<< HEAD
-            <v-container>
-                <v-text-field v-model="buscar">Buscar</v-text-field>
-            </v-container>
-=======
+
         <v-container>
             <v-text-field label="Buscar" v-model="search"></v-text-field>
             <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
         </v-container>
->>>>>>> 2d0831c4e58888fdb4ed396ed7a98c7a9fe0ad55
             <v-row>
                 <Cards v-for="(receta,i) in recetas" :key="i" 
                  :name="receta.nombre" 
@@ -118,13 +113,8 @@ export default {
         Cards,
         Footer,
     },
-<<<<<<< HEAD
-    mounted() {
-        /*let APP_ID = "02837b92";
-=======
     /*mounted() {
         let APP_ID = "02837b92";
->>>>>>> 2d0831c4e58888fdb4ed396ed7a98c7a9fe0ad55
         let APP_KEY = "241d207d693113e0c9d4b4a784165383";
         let vue = this;
         axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=salad`)
@@ -144,14 +134,8 @@ export default {
             .then(function (response) {
                 vue.recipes = response.data.hits;
                 //console.log(vue.recipes);
-<<<<<<< HEAD
-            })*/
-    },
-    methods: {
-=======
             })
         }
->>>>>>> 2d0831c4e58888fdb4ed396ed7a98c7a9fe0ad55
     }
 }
 </script>
