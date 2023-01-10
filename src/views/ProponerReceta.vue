@@ -4,8 +4,8 @@
         <v-main>
             <h1 align="center">Propuesta de Receta</h1>
             <v-container class="justify-center">
-                <p>La receta que vayas a ingresar será validada por los administradores de COMESCOM
-                    por lo que te recomendamos que la informacion que proporciones sea correcta y válida
+                <p>La receta que vayas a ingresar será validada por los administradores de COMESCOM,
+                    por lo que te recomendamos que la informacion que proporciones sea válida
                     para que más usuarios puedan probarla</p>
             </v-container>
             <v-form>
@@ -17,6 +17,11 @@
                      name="input-7-4" 
                      label="Descripción de la receta"
                      value="Ingrese aquí el procedimiento para preparar la receta"></v-textarea>
+                    
+                    <v-btn 
+                     class="ma-2"
+                     outlined
+                     color="green darken-4">Enviar</v-btn>
                 </v-container>
             </v-form>
         </v-main>
