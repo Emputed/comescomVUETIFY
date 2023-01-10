@@ -5,8 +5,10 @@
 
         <v-container>
             <v-text-field label="Buscar" v-model="search"></v-text-field>
-            <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
+            <v-btn v-on:click="busqueda(search, recipes)">Buscar</v-btn>
         </v-container>
+
+        <template v-if="search===''">
             <v-row>
                 <Cards v-for="(receta,i) in recetas" :key="i" 
                  :name="receta.nombre" 
@@ -15,8 +17,10 @@
                 :cal="receta.calorias">
                 </Cards>
             </v-row>
+        </template>
             
-            <!--<v-row>
+        <template v-else>
+            <v-row>
                 <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" :key="i">
                     <v-img height="250" :src=recipe.recipe.image></v-img>
                     <v-card-title>{{ recipe.recipe.label }}</v-card-title>
@@ -31,7 +35,9 @@
                     <v-divider class="mx-4"></v-divider>
                     <v-card-text>Calorias: {{ parseInt(recipe.recipe.calories) }}</v-card-text>
                 </v-card>
-            </v-row>-->
+            </v-row>
+        </template>
+            <!---->
         </v-main>
         <Footer></Footer>
     </v-app>
@@ -124,16 +130,15 @@ export default {
             })
     },*/
     methods: {
-        busqueda: (search) => {
+        busqueda: (search, recipes) => {
             console.log(search);
             let APP_ID = "02837b92";
-        let APP_KEY = "241d207d693113e0c9d4b4a784165383";
-        let vue = this;
-        console.log(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`);
-        axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
+            let APP_KEY = "241d207d693113e0c9d4b4a784165383";
+            let vue = this;
+            axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
             .then(function (response) {
-                vue.recipes = response.data.hits;
-                //console.log(vue.recipes);
+                recipes = response.data.hits;
+                console.log(recipes);
             })
         }
     }
