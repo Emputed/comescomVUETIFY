@@ -10,13 +10,14 @@
             </v-container>
             <v-form>
                 <v-container>
-                    <v-text-field label="Nombre de la receta"></v-text-field>
-
+                    <v-text-field label="Nombre de la receta" v-model="nombreReceta"></v-text-field>
                     <v-textarea 
                      outlined 
                      name="input-7-4" 
                      label="Descripción de la receta"
-                     value="Ingrese aquí el procedimiento para preparar la receta"></v-textarea>
+                     value="Ingrese aquí el procedimiento para preparar la receta"
+                     v-model="descripcionReceta"
+                     ></v-textarea>
                     
                     <v-btn 
                      class="ma-2"
@@ -39,5 +40,11 @@ export default {
         Navbar,
         Footer,
     },
+    data(){
+        return{
+            nombreReceta:'',
+            descripcionReceta:''
+        }
+    }
 }
 </script>
