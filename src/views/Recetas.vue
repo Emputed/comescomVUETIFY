@@ -14,7 +14,7 @@
                  :name="receta.nombre" 
                  :img="receta.img"
                  :descr="receta.descripcion"
-                :cal="receta.calorias">
+                 :cal="receta.calorias">
                 </Cards>
             </v-row>
         </template>
@@ -27,7 +27,7 @@
                     <v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>
                     <v-card-text>
                         <ul id="example-1">
-                            <li v-for="item in  recipe.recipe.ingredientLines">
+                            <li v-for="(item, i) in  recipe.recipe.ingredientLines" :key="i">
                                 {{ item }}
                             </li>
                         </ul>
@@ -124,7 +124,7 @@ export default {
             console.log(search);
             let APP_ID = "02837b92";
             let APP_KEY = "241d207d693113e0c9d4b4a784165383";
-            let vue = this;
+            
             axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
             .then(function (response) {
                 recipes = response.data.hits;
