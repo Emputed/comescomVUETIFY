@@ -142,7 +142,7 @@ export default {
                 "edad": edad,
                 "sexo": sexo
             }
-            axios.post('./api/users', json).then(data => {
+            axios.post('http://192.168.0.9:4000/api/users', json).then(data => {
                 console.log(data);
             })
         }

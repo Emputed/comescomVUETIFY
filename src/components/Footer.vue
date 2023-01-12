@@ -5,9 +5,19 @@
          flat tile class="light-green darken-1 white--text text-center"
          width="100%">
             <v-card-text>
-                <v-btn v-for="icon in icons" :key="icon" class="mx-4 white--text" icon>
+                <v-btn href="https://www.facebook.com/profile.php?id=100089054454736" target="blank" class="mx-4 white--text" icon>
                     <v-icon size="24px">
-                        {{ icon }}
+                        mdi-facebook
+                    </v-icon>
+                </v-btn>
+                <v-btn  class="mx-4 white--text" icon>
+                    <v-icon size="24px">
+                        mdi-twitter
+                    </v-icon>
+                </v-btn>
+                <v-btn href="https://instagram.com/comescom__?igshid=YmMyMTA2M2Y=" target="blank" class="mx-4 white--text" icon>
+                    <v-icon size="24px">
+                        mdi-instagram
                     </v-icon>
                 </v-btn>
             </v-card-text>
