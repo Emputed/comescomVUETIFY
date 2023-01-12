@@ -22,7 +22,7 @@
                 </v-btn>
             </v-card-text>
 
-            <v-card-text class="white--text pt-0">
+            <v-card-text href="https://twitter.com/COMESCOM_" class="white--text pt-0" target="blank">
                 <v-container>
                     COMESCOM tiene la finalidad de ayudar a las personas que tienen dificultades al momento de hacer alguna de sus comidas, bebidas o colaciones de su dieta, muchas veces porque desconocen cómo preparar algunos platos y otras porque no tienen una idea clara de qué pueden preparar con los alimentos, ingredientes que están en su refrigerador o la despensa.
                 </v-container>
