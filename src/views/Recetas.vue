@@ -5,7 +5,7 @@
 
         <v-container>
             <v-text-field label="Buscar" v-model="search"></v-text-field>
-            <v-btn v-on:click="busqueda(search, recipes)">Buscar</v-btn>
+            <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
         </v-container>
 
         <template v-if="search===''">
@@ -120,16 +120,22 @@ export default {
         Footer,
     },
     methods: {
-        busqueda: (search, recipes) => {
-            console.log(search);
-            let APP_ID = "02837b92";
-            let APP_KEY = "241d207d693113e0c9d4b4a784165383";
+        busqueda: function(search){
+            let aux_this;
+            aux_this = this;
+            const APP_ID = "02837b92";
+            const APP_KEY = "241d207d693113e0c9d4b4a784165383";
+            //console.log(`https://api.edamam.com/api/recipes/v2 type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
             
-            axios.get(`https://api.edamam.com/api/recipes/v2?type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
+            axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${APP_ID}&app_key=${APP_KEY}`)
             .then(function (response) {
-                recipes = response.data.hits;
-                console.log(recipes);
+                //console.log(response)
+                //console.log(aux_this.recipes.length);
+                aux_this.recipes = response.data.hits
+                //console.log(aux_this.recipes.length); 
             })
+            
+            
         }
     }
 }
