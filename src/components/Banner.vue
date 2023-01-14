@@ -2,8 +2,8 @@
     <v-carousel cycle height="400" hide-delimiter-background show-arrows-on-hover>
         <v-carousel-item v-for="(slide, i) in slides" :key="i" :src="slide.src">
             <v-row class="fill-height" align="center" justify="center">
-                <div class="text-h2 container" align="center" justify="center">
-                    <strong class="text-red-lighten-1">{{ slide.txt }}</strong>
+                <div class="text-h2 container indigo lighten-4" align="center" justify="center">
+                    <strong>{{ slide.txt }}</strong>
                 </div>
             </v-row>
         </v-carousel-item>
