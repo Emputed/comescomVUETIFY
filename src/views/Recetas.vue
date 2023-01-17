@@ -2,41 +2,38 @@
     <v-app>
         <Navbar></Navbar>
         <v-main>
+            <ToolBar></ToolBar>
+            <v-container>
+                <v-text-field label="Buscar" v-model="search"></v-text-field>
+                <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
+            </v-container>
 
-        <v-container>
-            <v-text-field label="Buscar" v-model="search"></v-text-field>
-            <v-btn v-on:click="busqueda(search)">Buscar</v-btn>
-        </v-container>
+            <template v-if="search === ''">
+                <v-row>
+                    <Cards v-for="(receta, i) in recetas" :key="i" :name="receta.nombre" :img="receta.img"
+                        :descr="receta.descripcion" :cal="receta.calorias">
+                    </Cards>
+                </v-row>
+            </template>
 
-        <template v-if="search===''">
-            <v-row>
-                <Cards v-for="(receta,i) in recetas" :key="i" 
-                 :name="receta.nombre" 
-                 :img="receta.img"
-                 :descr="receta.descripcion"
-                 :cal="receta.calorias">
-                </Cards>
-            </v-row>
-        </template>
-            
-        <template v-else>
-            <v-row>
-                <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" :key="i">
-                    <v-img height="250" :src=recipe.recipe.image></v-img>
-                    <v-card-title>{{ recipe.recipe.label }}</v-card-title>
-                    <v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>
-                    <v-card-text>
-                        <ul id="example-1">
-                            <li v-for="(item, i) in  recipe.recipe.ingredientLines" :key="i">
-                                {{ item }}
-                            </li>
-                        </ul>
-                    </v-card-text>
-                    <v-divider class="mx-4"></v-divider>
-                    <v-card-text>Calorias: {{ parseInt(recipe.recipe.calories) }}</v-card-text>
-                </v-card>
-            </v-row>
-        </template>
+            <template v-else>
+                <v-row>
+                    <v-card class="mx-auto my-12" max-width="374" v-for="(recipe, i) in recipes" :key="i">
+                        <v-img height="250" :src=recipe.recipe.image></v-img>
+                        <v-card-title>{{ recipe.recipe.label }}</v-card-title>
+                        <v-card-text>{{ recipe.recipe.ingredientLines }}</v-card-text>
+                        <v-card-text>
+                            <ul id="example-1">
+                                <li v-for="(item, i) in  recipe.recipe.ingredientLines" :key="i">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                        </v-card-text>
+                        <v-divider class="mx-4"></v-divider>
+                        <v-card-text>Calorias: {{ parseInt(recipe.recipe.calories) }}</v-card-text>
+                    </v-card>
+                </v-row>
+            </template>
             <!---->
         </v-main>
         <Footer></Footer>
@@ -48,7 +45,7 @@
 import Navbar from '@/components/Navbar';
 import Cards from '@/components/Cards';
 import Footer from '@/components/Footer';
-
+import ToolBar from '@/components/ToolBar';
 //AXIOS
 import axios from 'axios';
 
@@ -57,13 +54,13 @@ export default {
 
     data() {
         return {
-            search:"",
+            search: "",
             recipes: [],
-            buscar:"",
-            recetas:[
+            buscar: "",
+            recetas: [
                 {
                     nombre: "Enchiladas verdes",
-                    descripcion:"500g de pechuga de pollo, 1 cebolla blanca, 2 chiles cerranos, 8 tomates verdes, 1 diente de ajo, 1 rama de cilantro, 100gr queso panela, tortillas de maiz, aceite vegetal, sal al gusto, pimienta negra molida al gusto, crema al gusto",
+                    descripcion: "500g de pechuga de pollo, 1 cebolla blanca, 2 chiles cerranos, 8 tomates verdes, 1 diente de ajo, 1 rama de cilantro, 100gr queso panela, tortillas de maiz, aceite vegetal, sal al gusto, pimienta negra molida al gusto, crema al gusto",
                     calorias: 1428,
                     img: "../../img/enchiladas.jpg"
                 },
@@ -118,24 +115,25 @@ export default {
         Navbar,
         Cards,
         Footer,
+        ToolBar
     },
     methods: {
-        busqueda: function(search){
+        busqueda: function (search) {
             let aux_this;
             aux_this = this;
             const APP_ID = "02837b92";
             const APP_KEY = "241d207d693113e0c9d4b4a784165383";
             //console.log(`https://api.edamam.com/api/recipes/v2 type=public&app_id=${APP_ID}&app_key=${APP_KEY}&q=${search}`)
-            
+
             axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${APP_ID}&app_key=${APP_KEY}`)
-            .then(function (response) {
-                //console.log(response)
-                //console.log(aux_this.recipes.length);
-                aux_this.recipes = response.data.hits
-                //console.log(aux_this.recipes.length); 
-            })
-            
-            
+                .then(function (response) {
+                    //console.log(response)
+                    //console.log(aux_this.recipes.length);
+                    aux_this.recipes = response.data.hits
+                    //console.log(aux_this.recipes.length); 
+                })
+
+
         }
     }
 }

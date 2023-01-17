@@ -1,64 +1,67 @@
 <template>
     <v-app>
         <Navbar></Navbar>
+
         <v-main>
-            <v-container><h2>Verduras</h2></v-container>
-            <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="verdura in verduras" 
-                 :key="verdura.id" 
-                 :label="verdura.name" 
-                 color="success"
-                 >
-                </v-checkbox>
+            <ToolBar></ToolBar>
+            <v-container>
+                <h1 align="center">Ingredientes</h1>
+                <h4 align="center">Seleccione los ingredientes con los que cuenta en su hogar, nosotros le diremos
+                    las maravillosas recetas que puede preparar con ellos.
+                </h4>
             </v-container>
-            
-            <v-container><h2>Frutas</h2></v-container>
-            <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="fruta in frutas"
-                 :key="fruta.id"
-                 :label="fruta.name"
-                 color="orange"
-                ></v-checkbox>
+            <v-container>
+                <h2>Verduras</h2>
             </v-container>
-
-            <v-container><h2>Carnes</h2></v-container>
             <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="carne in carnes"
-                 :key="carne.id"
-                 :label="carne.name"
-                 color="red darken-3"
-                ></v-checkbox>
-            </v-container>
-
-            <v-container><h2>Lacteos</h2></v-container>
-            <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="lacteo in lacteos"
-                 :key="lacteo.id"
-                 :label="lacteo.name"
-                 color="secondary"
-                >
+                <v-checkbox v-for="verdura in verduras" :key="verdura.id" :label="verdura.name" color="success">
                 </v-checkbox>
             </v-container>
 
-            <v-container><h2>Harinas</h2></v-container>
+            <v-container>
+                <h2>Frutas</h2>
+            </v-container>
             <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="harina in harinas"
-                 :key="harina.id"
-                 :label="harina.name"
-                 color="indigo"
-                >
+                <v-checkbox v-for="fruta in frutas" :key="fruta.id" :label="fruta.name" color="orange"></v-checkbox>
+            </v-container>
+
+            <v-container>
+                <h2>Carnes</h2>
+            </v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="carne in carnes" :key="carne.id" :label="carne.name"
+                    color="red darken-3"></v-checkbox>
+            </v-container>
+
+            <v-container>
+                <h2>Lacteos</h2>
+            </v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="lacteo in lacteos" :key="lacteo.id" :label="lacteo.name" color="secondary">
                 </v-checkbox>
             </v-container>
 
-            <v-container><h2>Grasas</h2></v-container>
+            <v-container>
+                <h2>Harinas</h2>
+            </v-container>
             <v-container class="d-flex align-content-center flex-wrap">
-                <v-checkbox v-for="grasa in grasas"
-                 :key="grasa.id"
-                 :label="grasa.name"
-                 color="error"
-                >
+                <v-checkbox v-for="harina in harinas" :key="harina.id" :label="harina.name" color="indigo">
                 </v-checkbox>
             </v-container>
+
+            <v-container>
+                <h2>Grasas</h2>
+            </v-container>
+            <v-container class="d-flex align-content-center flex-wrap">
+                <v-checkbox v-for="grasa in grasas" :key="grasa.id" :label="grasa.name" color="error">
+                </v-checkbox>
+            </v-container>
+
+            <v-container>
+                <v-btn class="ma-2" outlined color="green darken-4">Enviar ingredientes</v-btn>
+            </v-container>
+
+
         </v-main>
         <Footer></Footer>
     </v-app>
@@ -67,12 +70,13 @@
 <script>
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
+import ToolBar from '@/components/ToolBar';
 export default {
     name: 'Ingredientes',
     components: {
         Navbar,
-        Footer
+        Footer,
+        ToolBar
     },
     data: () => ({
         verduras: [

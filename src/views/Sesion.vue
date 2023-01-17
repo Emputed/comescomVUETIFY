@@ -26,7 +26,7 @@
                                                                 color="blue"> </v-checkbox>
                                                         </v-col>
                                                     </v-row>
-                                                    <v-btn v-on:click="sesion(correo , contra )" color="light-green darken-4" dark block tile>Iniciar</v-btn>
+                                                    <v-btn to='/' color="light-green darken-4" dark block tile>Iniciar</v-btn>
                                                 </v-form>
                                             </v-col>
                                         </v-row>
@@ -131,7 +131,7 @@ export default {
                 "correo": correo,
                 "contra": contra
             }
-            //console.log(json);
+            
         }
         ,
         registro(nombre, correo, contra, edad, sexo) {

@@ -2,6 +2,7 @@
     <v-app>
         <Navbar></Navbar>
         <v-main>
+            <ToolBar></ToolBar>
             <h1 align="center">Propuesta de Receta</h1>
             <v-container class="justify-center">
                 <p>La receta que vayas a ingresar será validada por los administradores de COMESCOM,
@@ -33,12 +34,13 @@
 <script>
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
+import ToolBar from '@/components/ToolBar';
 export default {
     name: 'ProponerReceta',
     components: {
         Navbar,
         Footer,
+        ToolBar
     },
     data(){
         return{
